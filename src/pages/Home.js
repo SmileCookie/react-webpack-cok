@@ -8,20 +8,22 @@ import {doAdd} from 'reduxs/test';
 import confs from 'conf';
 import axios from 'nets';
 
+import { FormattedMessage, injectIntl } from 'react-intl';
+
 @connect(
     state => ({test: state.test}),
     {
         doAdd
     }
 )
-export default class Count extends Component {
+ class Count extends Component {
     constructor(props) {
         super(props);
 
         console.log(axios, 'yyyy');
-        axios.get('sdfsdf', () => {
-            console.log(1111);
-        })
+        // axios.get('sdfsdf', () => {
+        //     console.log(1111);
+        // })
     }
 
     render() {
@@ -31,8 +33,11 @@ export default class Count extends Component {
             <div className="home abc ssl">
                 <Link to="/count/cd"> count @@@ {this?.a?.b?.c?.d} -- 1 </Link>
               <h1 className="h-txt">This  v----v is Home----> Page!!!--{this.props.test.a}</h1>
-              <input type="button" onClick={this.props.doAdd} />
+              <input type="button" onClick={this.props.doAdd} />33
+              <FormattedMessage id="test"/>
             </div>
         )
     }
 }
+
+export default injectIntl(Count)

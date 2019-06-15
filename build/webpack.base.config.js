@@ -25,6 +25,7 @@ module.exports = {
             reduxs: path.resolve(__dirname, "../src/redux/module"),
             conf: path.resolve(__dirname, "../src/conf"),
             nets: path.resolve(__dirname, "../src/net"),
+            components: path.resolve(__dirname, "../src/components"),
         }
     },
     module: {

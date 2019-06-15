@@ -7,6 +7,8 @@ import Router from "./router";
 import $ from 'jquery';
 import { add } from './math.js';
 import store from './redux';
+import LanguageProvider from 'components/languageProvider';
+import translationMessages from './lng';
 
 add(66)
 /*初始化*/
@@ -24,9 +26,11 @@ function renderWithHotReload(Router) {
     ReactDOM.render(
         <AppContainer>
             <Provider store={store()}>
-                <BrowserRouter>
-                    <Router />
-                </BrowserRouter>
+                <LanguageProvider messages={translationMessages}>
+                    <BrowserRouter>
+                        <Router />
+                    </BrowserRouter>
+                </LanguageProvider>
             </Provider>
         </AppContainer>,
         document.getElementById("app")
