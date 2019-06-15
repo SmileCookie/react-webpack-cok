@@ -5,6 +5,8 @@ import '../assets/home.less'
 import {connect} from 'react-redux';
 import {doAdd} from 'reduxs/test';
 
+import confs from 'conf';
+
 @connect(
     state => ({test: state.test}),
     {
@@ -18,6 +20,7 @@ export default class Count extends Component {
 
     render() {
         console.log(this.props);
+        console.log(confs, '----->');
         return (
             <div className="home abc ssl">
                 <Link to="/count/cd"> count @@@ {this?.a?.b?.c?.d} -- 1 </Link>

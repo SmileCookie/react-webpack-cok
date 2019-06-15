@@ -23,6 +23,7 @@ module.exports = {
             pages: path.resolve(__dirname, "../src/pages"),
             router: path.resolve(__dirname, "../src/router"),
             reduxs: path.resolve(__dirname, "../src/redux/module"),
+            conf: path.resolve(__dirname, "../src/conf"),
         }
     },
     module: {
@@ -34,9 +35,6 @@ module.exports = {
                 use: [
                     {
                         loader: "happypack/loader?id=happyBabel"
-                    },
-                    {
-                        loader: "lazyload-loader"
                     }
                 ]
             },
