@@ -5,7 +5,7 @@ import axios from 'nets';
 const SET_LANG = 'btcwinex/language/SET_LANG';
 
 const initialLanguageState = {
-    locale: 'en'
+    locale: 'zh'
 }
 
 const reducer = (state = initialLanguageState, action) => {
