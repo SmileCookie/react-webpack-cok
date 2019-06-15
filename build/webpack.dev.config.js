@@ -12,7 +12,8 @@ module.exports = merge(commonConfig, {
         path: path.resolve(__dirname, "../dist"),
         // 文件名称
         filename: "bundle.js",
-        chunkFilename: '[name].js'
+        chunkFilename: '[name].js',
+        publicPath: '/',
     },
     plugins: [
         //开启HMR(热替换功能,替换更新部分,不重载页面！) 相当于在命令行加 --hot

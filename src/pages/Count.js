@@ -15,10 +15,16 @@ export default class Count extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div>
                 当前count值：{this.state.count}<br/>
                 <button style={{border:'1px dashed blue'}} onClick={() => this.handleClick()}>增加1</button>
+                <div>
+                    {
+                        this.props.cd
+                    }
+                </div>
             </div>
         )
     }

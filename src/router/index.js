@@ -1,21 +1,40 @@
-import React from "react";
-import { Route, Link, Switch } from "react-router-dom";
+/**
+ * recursion router function
+ * @description router config will use this function return.
+ * @author luchao.ding
+ */
+import React from 'react';
+import {Route,Switch} from 'react-router-dom';
 
-import Home from "../pages/Home.jsx";
-import Count from "../pages/Count.jsx";
-const PrimaryLayout = () => (
-  <div className="primary-layout">
-    <header>
-      <Link to="/">toHome</Link>&emsp;|&emsp;
-      <Link to="/count">toCount</Link>
-    </header>
-    <main>
+// router config
+import Routes from "./conf";
+
+/**
+ * 
+ * @param {Route Rules} Routes 
+ */
+const fmRoutes = (Routes) => {
+  return (
+    <React.Fragment>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/count" exact component={Count} />
+        {
+          Routes.map((route) => {
+            return (<Route {...route} render={() => {
+              return (
+                <React.Fragment>
+                  <route.components cd={route.routes ? fmRoutes(route.routes) : null} />
+                </React.Fragment>
+              )
+            }} />)
+          })
+        }
       </Switch>
-    </main>
-  </div>
-);
+    </React.Fragment>
+  )
+};
 
-export default PrimaryLayout;
+export default () => {
+  return fmRoutes(Routes);
+};
+
+

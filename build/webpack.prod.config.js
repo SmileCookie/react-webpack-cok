@@ -15,7 +15,8 @@ module.exports = merge(commonConfig, {
         path: path.resolve(__dirname, "../dist"),
         // 文件名称
         filename: '[name].[contenthash].js',
-        chunkFilename: '[name].[contenthash].js'
+        chunkFilename: '[name].[contenthash].js',
+        publicPath: '/',
     },
     devtool: 'cheap-module-source-map',
     optimization: {
@@ -40,9 +41,9 @@ module.exports = merge(commonConfig, {
         new PurifyCSS({
             paths: glob.sync([
                 // 要做 CSS Tree Shaking 的路径文件
-                path.resolve(__dirname, '..', 'src/*.html'),
-                path.resolve(__dirname, '..', 'src/*.js'),
-                path.resolve(__dirname, '..', 'src/**/*.jsx'),
+                path.resolve(__dirname, '../', 'src/*.html'),
+                path.resolve(__dirname, '../', 'src/**/*.js'),
+                path.resolve(__dirname, '../', 'src/**/*.jsx'),
             ])
         }),
         // PWA配置，生产环境才需要
@@ -54,7 +55,7 @@ module.exports = merge(commonConfig, {
             filepath: path.resolve(__dirname, '../dll/jquery.dll.js') // 对应的 dll 文件路径
         }),
         new webpack.DllReferencePlugin({
-            manifest: path.resolve(__dirname, '..', 'dll/jquery-manifest.json')
+            manifest: path.resolve(__dirname, '../', 'dll/jquery-manifest.json')
         })
     ]
 });

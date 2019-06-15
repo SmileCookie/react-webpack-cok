@@ -12,10 +12,12 @@ module.exports = {
     entry: ["./src/index.js"],
     output: {
         // 输出目录
+        filename: '[name].[hash].bundle.js',
+        chunkFilename: '[chunkhash].chunk.js',
         path: path.resolve(__dirname, "../dist")
     },
     resolve: {
-        extensions: [".js", ".jsx"],
+        extensions: [".js", ".css", '.less'],
         alias: {
             "@": path.resolve(__dirname, "../src"),
             pages: path.resolve(__dirname, "../src/pages"),
@@ -26,21 +28,25 @@ module.exports = {
         rules: [
             {
                 // cnpm i babel-loader @babel/core @babel/preset-env -D
-                test: /\.jsx?$/,
+                test: /\.(js|jsx)?$/,
                 exclude: /node_modules/,
                 use: [
                     {
                         loader: "happypack/loader?id=happyBabel"
+                    },
+                    {
+                        loader: "lazyload-loader"
                     }
                 ]
             },
             {
-                test: /\.(sc|sa|c)ss$/,
+                test: /\.(c|le)ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader", // 编译css
                     "postcss-loader", // 使用 postcss 为 css 加上浏览器前缀
-                    "sass-loader" // 编译scss
+                    //"sass-loader", // 编译scss
+                    "less-loader" // 编译 less
                 ]
             },
             {
