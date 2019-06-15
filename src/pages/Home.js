@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {doAdd} from 'reduxs/test';
 
 import confs from 'conf';
+import axios from 'nets';
 
 @connect(
     state => ({test: state.test}),
@@ -16,6 +17,11 @@ import confs from 'conf';
 export default class Count extends Component {
     constructor(props) {
         super(props);
+
+        console.log(axios, 'yyyy');
+        axios.get('sdfsdf', () => {
+            console.log(1111);
+        })
     }
 
     render() {
