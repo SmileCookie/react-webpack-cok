@@ -19,9 +19,10 @@ module.exports = {
     resolve: {
         extensions: [".js", ".css", '.less'],
         alias: {
-            "@": path.resolve(__dirname, "../src"),
+            "src": path.resolve(__dirname, "../src"),
             pages: path.resolve(__dirname, "../src/pages"),
-            router: path.resolve(__dirname, "../src/router")
+            router: path.resolve(__dirname, "../src/router"),
+            reduxs: path.resolve(__dirname, "../src/redux/module"),
         }
     },
     module: {

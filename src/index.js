@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from 'react-redux';
 import { AppContainer } from "react-hot-loader";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./router";
 import $ from 'jquery';
-import { add } from './math.js'
+import { add } from './math.js';
+import store from './redux';
 
 add(66)
 /*初始化*/
@@ -17,15 +19,15 @@ if (module.hot) {
         renderWithHotReload(Router);
     });
 }
-$(function () {
-    console.log('在下张不怂，正在测试jquery');
-})
+
 function renderWithHotReload(Router) {
     ReactDOM.render(
         <AppContainer>
-            <BrowserRouter>
-                <Router />
-            </BrowserRouter>
+            <Provider store={store()}>
+                <BrowserRouter>
+                    <Router />
+                </BrowserRouter>
+            </Provider>
         </AppContainer>,
         document.getElementById("app")
     );

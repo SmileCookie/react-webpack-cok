@@ -2,18 +2,27 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/home.less'
 
+import {connect} from 'react-redux';
+import {doAdd} from 'reduxs/test';
+
+@connect(
+    state => ({test: state.test}),
+    {
+        doAdd
+    }
+)
 export default class Count extends Component {
     constructor(props) {
         super(props);
     }
 
-
     render() {
         console.log(this.props);
         return (
             <div className="home abc ssl">
-                <Link to="/count/cd"> count </Link>
-              <h1 className="h-txt">This is Home----> Page!!!</h1>
+                <Link to="/count/cd"> count @@@ {this?.a?.b?.c?.d} -- 1 </Link>
+              <h1 className="h-txt">This  v----v is Home----> Page!!!--{this.props.test.a}</h1>
+              <input type="button" onClick={this.props.doAdd} />
             </div>
         )
     }
