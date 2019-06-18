@@ -6,7 +6,7 @@
 import React from 'react';
 
 // test component
-import Home from "../pages/Home";
+import Home from "../pages/demoPage";
 import Count from "../pages/Count";
 
 // lazy component
