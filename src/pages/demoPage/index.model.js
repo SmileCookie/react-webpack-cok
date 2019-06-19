@@ -27,6 +27,8 @@ async function DemoPageModel() {
         // 如果存在多层下个实例讲明
         containsObj(MockA, result);
 
+        // 这里可能是各种的计算
+
         // 如果没有抛出异常代表没问题
         rtData = result;
     } catch(e){
