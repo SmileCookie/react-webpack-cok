@@ -13,6 +13,7 @@ import React from 'react';
 
 // 获取模型数据
 import {DemoPageModel} from './index.model.js';
+import {MB} from './index.modelB';
 
 // 获取过渡页面样式 注意高频度用的内容不要用简写形式否则编辑无法自动提示！！！
 import {ThemeFactory, Styles} from '../../components/transition';
@@ -44,6 +45,11 @@ class DemoPage extends React.Component{
             this.A = res;
             this.forceUpdate();
         });
+
+        // 模型B
+        MB().then(res => {
+            this.B = res;
+        })
     }
     render(){
         return (
@@ -62,7 +68,7 @@ class DemoPage extends React.Component{
                     !this.B ? 
                     ThemeFactory.getThemeInstance(Styles.ThemeA)
                     :
-                    null
+                    console.log(this.B)
                 }
             </div>
         )
