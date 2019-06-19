@@ -6,13 +6,16 @@
  * 所有的事件，数据获取，置于此层。
  * 获取数据后向下分发，视图组件负责消费。
  * 注释写法也在此 demo
+ * 关于提高编辑提示的内容就不要用简写了。
  * @author luchao.ding
  */
 import React from 'react';
 
-// 获取该模块的mock,当发生异常直接使用mock的数据替换。
-import MockA from 'mock/A';
-import MockB from 'mock/B';
+// 获取模型数据
+import {DemoPageModel} from './index.model.js';
+
+// 获取过渡页面样式 注意高频度用的内容不要用简写形式否则编辑无法自动提示！！！
+import {ThemeFactory, Styles} from '../../components/transition';
 
 class DemoPage extends React.Component{
     constructor(props){
@@ -37,12 +40,30 @@ class DemoPage extends React.Component{
     }
     componentDidMount(){
         // 负责获取数据
-        console.log(MockA);
+        DemoPageModel().then((res)=>{
+            this.A = res;
+            this.forceUpdate();
+        });
     }
     render(){
         return (
             <div>
                 123
+                {
+                    !this.A ? 
+                    ThemeFactory.getThemeInstance(Styles.ThemeA)
+                    :
+                    <div>
+                        name: {this.A.name}
+                        id: {this.A.id}
+                    </div>
+                }
+                {
+                    !this.B ? 
+                    ThemeFactory.getThemeInstance(Styles.ThemeA)
+                    :
+                    null
+                }
             </div>
         )
     }
