@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router'
 
-export default class Count extends Component {
+ class Count extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,3 +30,4 @@ export default class Count extends Component {
         )
     }
 }
+export default withRouter(Count)
