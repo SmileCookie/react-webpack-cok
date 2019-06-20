@@ -28,6 +28,7 @@ const BaseConfig = {
 
 
 
+    defaultData: '--',
 };
 
 const Configs = {
