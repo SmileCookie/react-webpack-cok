@@ -19,10 +19,10 @@ const fmRoutes = (Routes) => {
       <Switch>
         {
           Routes.map((route) => {
-            return (<Route {...route} render={() => {
+            return (<Route {...route} render={(props) => {
               return (
                 <React.Fragment>
-                  <route.components cd={route.routes ? fmRoutes(route.routes) : null} />
+                  <route.components {...props} cd={route.routes ? fmRoutes(route.routes) : null} />
                 </React.Fragment>
               )
             }} />)
