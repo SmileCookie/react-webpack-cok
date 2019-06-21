@@ -10,24 +10,6 @@ const ENV = process.env.NODE_ENV;
 const BaseConfig = {
     api: '/api',
     axiosTimeout: 0,
-
-    //获取资金数据间隔时间
-    FETCH_ACCOUNT_INTERVAL: 5000,
-    //默认法币
-    DEFAULT_MONEY : "USD",
-    CONF_MONEY:{
-                USD:"$",
-                CNY:"¥",
-                EUR:"€", 
-                GBP:"£", 
-                AUD:"A$"
-    },
-
-    // 交易相关 url
-    TRADEGEADURL :["/bw/trade","/bw/multitrade","/bw/announcements","/bw/news","/bw/newsDetail","/bw/announcementsDetail","/bw/margin"],
-
-
-
     defaultData: '--',
 };
 
@@ -39,6 +21,7 @@ const Configs = {
 
     }
 };
+export const BASE_UIR = '/bw/';
 
 const configs = {...BaseConfig, ...Configs[ENV]};
 
@@ -67,6 +50,10 @@ export const CONF_MONEY={
 export const COOKIE_MONEY = "currency";
 //cookie过期天数
 export const COOKIE_EXPIRED_DAYS = 3000;
+//获取资金数据间隔时间
+export const FETCH_ACCOUNT_INTERVAL = 5000;
+// 交易相关 url
+export const TRADEGEADURL = ["/bw/trade","/bw/multitrade","/bw/announcements","/bw/news","/bw/newsDetail","/bw/announcementsDetail","/bw/margin"]
 
 
 //otc+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

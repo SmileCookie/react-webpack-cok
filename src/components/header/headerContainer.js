@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import cookie from 'js-cookie';
-import Header from './header';
+import Headerss from './header';
 import { logout } from '../../redux/module/session'
 import { fetchAssetsDetail, fetchAssetsTotal ,fetchrWalletTotal} from '../../redux/module/assets'
 import {chooseSectionType} from '../../redux/module/header'
@@ -51,4 +51,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Headerss);

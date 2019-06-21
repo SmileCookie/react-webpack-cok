@@ -1,6 +1,6 @@
 const BigNumber = require('big.js');
 import cookie from 'js-cookie';
-import {COIN_KEEP_POINT, COOKIE_LAN, BASE_UIR,WEBSOCKETURL,EOSTYPE } from '../conf'
+import {COIN_KEEP_POINT, COOKIE_LAN,WEBSOCKETURL,EOSTYPE } from '../conf/index'
 
 export const formatMarkets = (newMarketsData, oldMarketsData) => {
     let record = [] ;
@@ -520,7 +520,7 @@ export const formatURL = (url = '') => {
         rt = rt.join(sp);
         // console.log(rt);
     }else{
-        rt = BASE_UIR + url.substring(1);
+        rt = '/bw/' + url.substring(1);
     }
 
     return rt;
@@ -663,9 +663,9 @@ export const Types = {
     }
 };
 
-export const getType = (o) => {
-    return Object.prototype.toString.call(o).slice(8, -1);
-};
+// export const getType = (o) => {
+//     return Object.prototype.toString.call(o).slice(8, -1);
+// };
 
 export const isFunc = (func = () => {}) => {
     return 'Function' === getType(func);

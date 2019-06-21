@@ -10,6 +10,7 @@
  * @author luchao.ding
  */
 import React from 'react';
+import Headers from '../../components/header/header'
 
 // 获取模型数据
 import {DemoPageModel} from './index.model.js';
@@ -54,6 +55,7 @@ class DemoPage extends React.Component{
     render(){
         return (
             <div>
+                 <Headers />
                 123
                 {
                     !this.A ? 
