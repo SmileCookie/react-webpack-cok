@@ -28,7 +28,6 @@ class Header extends React.Component {
         this.state = {
            
         };
-       this.jmp = this.jmp.bind(this)
        this.ch = window.location.href;
     }
 
@@ -37,9 +36,7 @@ class Header extends React.Component {
        
     }
 
-    jmp(url = ''){
-        
-    }
+   
 
     formatFundsDetail(result) {
         BigNumber.RM = 0;
@@ -81,32 +78,31 @@ class Header extends React.Component {
                         <a className="logo" href="/">
                             <img  src={Logo} />
                         </a>
-                        {/* <ul className="nav clearfix">
+                        <ul className="nav clearfix">
                             <li>
-                                <Link title={formatMessage({id:"币币交易中心"})} onClick={()=>{this.jmp("/bw/trade/")}} className={ch.includes("/trade") ? 'bbyh-choosed' : ''} >
+                                <Link title={formatMessage({id:"币币交易中心"})} to="/bw/trade/" className={ch.includes("/trade") ? 'bbyh-choosed' : ''} >
                                     <FormattedMessage id="币币交易中心"/>
                                 </Link>
                     
                             </li>
 
                             <li className="hot">
-                                <Link title={formatMessage({id:"多屏看板"})} onClick={()=>{this.jmp("/bw/multitrade")}}  className={ch.includes("/multitrade") ? 'bbyh-choosed' : ''} >
+                                <Link title={formatMessage({id:"多屏看板"})} to="/bw/multitrade"   className={ch.includes("/multitrade") ? 'bbyh-choosed' : ''} >
                                     <FormattedMessage id="多屏看板"/>
                                 </Link>
                             </li>
                             <li>
-                                <Link title={formatMessage({id:"公告"})} onClick={()=>{this.jmp("/bw/announcements")}}  className={ch.includes("/announcements") ? 'bbyh-choosed' : ''}>
+                                <Link title={formatMessage({id:"公告"})} to="/bw/announcements"  className={ch.includes("/announcements") ? 'bbyh-choosed' : ''}>
                                     <FormattedMessage id="公告"/>
                                 </Link>
                             </li>
 
                             <li>
-                            <Link title={formatMessage({id:"新闻"})} onClick={()=>{this.jmp("/bw/news")}}  className={ch.includes("/news") ? 'bbyh-choosed' : ''}>
+                            <Link title={formatMessage({id:"新闻"})} to="/bw/news" className={ch.includes("/news") ? 'bbyh-choosed' : ''}>
                                     <FormattedMessage id="新闻"/>
                                 </Link>
                             </li>
-
-                        </ul> */}
+                        </ul>
                     </div>
                 </div>
             </header>

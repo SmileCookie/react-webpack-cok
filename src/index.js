@@ -9,6 +9,8 @@ import { add } from './math.js';
 import store from './redux';
 import LanguageProvider from 'components/languageProvider';
 import translationMessages from './lng';
+import './assets/style/base/index.less'
+import './assets/style/base/layout.less'
 
 add(66)
 /*初始化*/

@@ -27,14 +27,14 @@ module.exports = merge(commonConfig, {
     devServer: {
         hot: true,
         contentBase: path.resolve(__dirname, "../dist"),
-        host: "localhost", // 可以使用手机访问
+        host: "www.common.com", // 可以使用手机访问
         port: 3000,
         historyApiFallback: true, //  该选项的作用所有的404都连接到index.html
         proxy: {
             // 代理到后端的服务地址
             "/api": {
                 changeOrigin: true,
-                target: "http://www.common.com",
+                target: "http://192.168.2.35:8011",
                 pathRewrite: {'^/api' : ''},
                 logLevel: 'debug',
             }

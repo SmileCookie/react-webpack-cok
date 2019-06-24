@@ -6,12 +6,13 @@
 import React from 'react';
 
 // test component
-import Home from "../pages/demoPage";
-import Count from "../pages/Count";
+//import Home from "../pages/demoPage";
+// import Count from "../pages/Count";
 
 // lazy component
 import Lazy from './lazy';
-const Cd = Lazy(React.lazy(() => import('../pages/cd')));
+// const Cd = Lazy(React.lazy(() => import('../pages/cd')));
+const Home  = Lazy(React.lazy(() => import('../pages/demoPage')));
 
 // 根
 const ROOTPATH = '/';
@@ -26,17 +27,18 @@ export default [
         components: Home,
         key: 'Home',
         exact: true,
-    },{
-        path: COUNTPATH,
-        components: Count,
-        key: 'Count',
-        routes: [
-            {
-                path: COUNTCD,
-                components: Cd,
-                key: 'cd',
-                exact: true,
-            }
-        ]
-    }
+    },
+    // {
+    //     path: COUNTPATH,
+    //     components: Count,
+    //     key: 'Count',
+    //     routes: [
+    //         {
+    //             path: COUNTCD,
+    //             components: Cd,
+    //             key: 'cd',
+    //             exact: true,
+    //         }
+    //     ]
+    // }
 ];
