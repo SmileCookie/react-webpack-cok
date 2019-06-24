@@ -6,7 +6,7 @@ const webpack = require("webpack");
 module.exports = merge(commonConfig, {
     mode: "development",
     entry: ["react-hot-loader/patch"],
-    devtool: 'cheap-module-eval-soure-map',
+    devtool: 'cheap-module-eval-source-map',
     output: {
         // 输出目录
         path: path.resolve(__dirname, "../dist"),
