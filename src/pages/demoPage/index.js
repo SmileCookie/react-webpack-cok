@@ -41,6 +41,7 @@ class DemoPage extends React.Component{
         this.B = null;
     }
     componentDidMount(){
+        console.log(123, this.props);
         // 负责获取数据
         DemoPageModel().then((res)=>{
             this.A = res;
